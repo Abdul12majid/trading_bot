@@ -1,0 +1,3 @@
+time,strategy,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2023-12-15 09:30:00-05:00,MLTrader,BTC,buy,market,new,1,gtc,0.0,1,stock,,,
+2023-12-15 09:30:00-05:00,MLTrader,BTC,buy,market,fill,1,gtc,0.0,1,stock,92.65509796142578,540.0,0.0
