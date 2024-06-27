@@ -1,0 +1,14 @@
+2024-06-27 17:42:06,800: root: INFO: MLTrader : Executing the initialize lifecycle method
+2024-06-27 17:42:09,477: root: INFO: Current backtesting datetime 2024-01-02 08:30:00-05:00
+2024-06-27 17:42:09,477: root: INFO: MLTrader : Executing the before_market_opens lifecycle method
+2024-06-27 17:42:09,477: root: INFO: Current backtesting datetime 2024-01-02 09:30:00-05:00
+2024-06-27 17:42:09,477: root: INFO: MLTrader : Executing the before_starting_trading lifecycle method
+2024-06-27 17:42:09,477: root: INFO: Current backtesting datetime 2024-01-02 15:59:00-05:00
+2024-06-27 17:42:09,485: root: INFO: MLTrader : Executing the before_market_closes lifecycle method
+2024-06-27 17:42:09,485: root: INFO: Current backtesting datetime 2024-01-02 16:00:00-05:00
+2024-06-27 17:42:09,485: root: INFO: MLTrader : Executing the after_market_closes lifecycle method
+2024-06-27 17:42:09,485: root: INFO: MLTrader : Executing the on_strategy_end lifecycle method
+2024-06-27 17:42:09,485: root: INFO: Backtesting finished
+2024-06-27 17:42:09,485: root: WARNING: Cannot plot returns because the strategy returns are missing
+2024-06-27 17:42:09,727: root: WARNING: Cannot create a tearsheet because the strategy returns are missing
+2024-06-27 17:42:09,727: backtest_stats: INFO: Backtest took 0:00:02.927304 for a speed of 0.000

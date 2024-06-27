@@ -1,13 +1,13 @@
-2024-06-24 12:54:11,226: root: INFO: MLTrader : Executing the initialize lifecycle method
-2024-06-24 12:54:13,747: root: INFO: Current backtesting datetime 2023-12-15 08:30:00-05:00
-2024-06-24 12:54:13,758: root: INFO: MLTrader : Executing the before_market_opens lifecycle method
-2024-06-24 12:54:13,758: root: INFO: Current backtesting datetime 2023-12-15 09:30:00-05:00
-2024-06-24 12:54:13,758: root: INFO: MLTrader : Executing the before_starting_trading lifecycle method
-2024-06-24 12:54:13,763: root: INFO: MLTrader : Executing the on_trading_iteration lifecycle method at 2024-06-24 12:54:13
-2024-06-24 12:54:13,763: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
-2024-06-24 12:54:13,911: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
-2024-06-24 12:54:13,911: root: ERROR: name 'days' is not defined
-2024-06-24 12:54:13,973: root: ERROR: Traceback (most recent call last):
+2024-06-27 16:29:58,617: root: INFO: MLTrader : Executing the initialize lifecycle method
+2024-06-27 16:30:01,456: root: INFO: Current backtesting datetime 2023-12-15 08:30:00-05:00
+2024-06-27 16:30:01,469: root: INFO: MLTrader : Executing the before_market_opens lifecycle method
+2024-06-27 16:30:01,477: root: INFO: Current backtesting datetime 2023-12-15 09:30:00-05:00
+2024-06-27 16:30:01,477: root: INFO: MLTrader : Executing the before_starting_trading lifecycle method
+2024-06-27 16:30:01,477: root: INFO: MLTrader : Executing the on_trading_iteration lifecycle method at 2024-06-27 16:30:01
+2024-06-27 16:30:01,477: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-06-27 16:30:01,627: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-06-27 16:30:01,628: root: ERROR: 'MLTrader' object has no attribute 'get_news'
+2024-06-27 16:30:01,679: root: ERROR: Traceback (most recent call last):
   File "C:\Users\Owner\Documents\Forms\final year project2\python_env\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 831, in run
     self._run_trading_session()
   File "C:\Users\Owner\Documents\Forms\final year project2\python_env\Lib\site-packages\lumibot\strategies\strategy_executor.py", line 782, in _run_trading_session
@@ -31,17 +31,11 @@
              ^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Owner\Documents\Forms\final year project2\trading_bot\trading_bot\main.py", line 53, in on_trading_iteration
     news = self.get_news()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\Owner\Documents\Forms\final year project2\trading_bot\trading_bot\main.py", line 39, in get_news
-    today, three_days = self.get_dates()
-                        ^^^^^^^^^^^^^^^^
-  File "C:\Users\Owner\Documents\Forms\final year project2\trading_bot\trading_bot\main.py", line 35, in get_dates
-    three_days = today - Timedelta(days+3)
-                                   ^^^^
-NameError: name 'days' is not defined
+           ^^^^^^^^^^^^^
+AttributeError: 'MLTrader' object has no attribute 'get_news'
 
-2024-06-24 12:54:13,973: root: INFO: MLTrader : Executing the on_bot_crash event method
-2024-06-24 12:54:14,018: root: INFO: Backtesting finished
-2024-06-24 12:54:14,018: root: WARNING: Cannot plot returns because the strategy returns are missing
-2024-06-24 12:54:15,983: root: WARNING: Cannot create a tearsheet because the strategy returns are missing
-2024-06-24 12:54:15,983: backtest_stats: INFO: Backtest took 0:00:04.761884 for a speed of 0.000
+2024-06-27 16:30:01,679: root: INFO: MLTrader : Executing the on_bot_crash event method
+2024-06-27 16:30:01,782: root: INFO: Backtesting finished
+2024-06-27 16:30:01,784: root: WARNING: Cannot plot returns because the strategy returns are missing
+2024-06-27 16:30:04,372: root: WARNING: Cannot create a tearsheet because the strategy returns are missing
+2024-06-27 16:30:04,372: backtest_stats: INFO: Backtest took 0:00:05.765059 for a speed of 0.000

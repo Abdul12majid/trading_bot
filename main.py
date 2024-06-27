@@ -8,7 +8,7 @@ from timedelta import Timedelta
 from finbert_utils import estimate_sentiment
 
 API_KEY = "PKEKDK4GJCP6PE6WU8FR" 
-API_SECRET = "tlQRDNO2eqgfYI4yjbuyxfEausetTzMsUgZyMXqd" 
+API_SECRET = "tlQRDNO2eqgfYI4yjbuyxfEausetTzMsUgZyMXqd"  
 BASE_URL = "https://paper-api.alpaca.markets/v2"
 
 ALPACA_CREDS = {
@@ -18,13 +18,12 @@ ALPACA_CREDS = {
 }
 
 class MLTrader(Strategy): 
-	def initialize(self, symbol:str="SPY", cash_at_risk:float=.5): 
+	def initialize(self, symbol:str="USD", cash_at_risk:float=.5): 
 		self.symbol = symbol
 		self.sleeptime = "24H" 
 		self.last_trade = None 
 		self.cash_at_risk = cash_at_risk
 		self.api = REST(base_url=BASE_URL, key_id=API_KEY, secret_key=API_SECRET)
-
 	def position_sizing(self):
 		cash = self.get_cash() #cash
 		last_price = self.get_last_price(self.symbol)
@@ -36,7 +35,7 @@ class MLTrader(Strategy):
 		three_days = today - Timedelta(days=3)
 		return today.strftime('%Y-%m-%d'), three_days.strftime('%Y-%m-%d')
 
-	def get_sentiment(self):
+	def get_news(self):
 		today, three_days = self.get_dates()
 		news = self.api.get_news(
 			symbol=self.symbol,
@@ -64,7 +63,7 @@ class MLTrader(Strategy):
 				self.submit_order(order)
 				self.last_trade = "buy"
 
-start_date = datetime(2023, 12, 15)
+start_date = datetime(2023, 12, 20)
 end_date = datetime(2023, 12, 31)
 
 broker = Alpaca(ALPACA_CREDS)
@@ -72,7 +71,7 @@ strategy = MLTrader(
 	name='mlstrat',
  	broker=broker,
  	parameters={
- 		"symbol":"SPY", 
+ 		"symbol":"USD", 
  		"cash_at_risk":.5
  	})
 strategy.backtest(
@@ -80,7 +79,7 @@ strategy.backtest(
 	start_date,
 	end_date,
 	parameters={
-		"symbol":"SPY", 
+		"symbol":"USD", 
  		"cash_at_risk":.5
 	}
 	)
